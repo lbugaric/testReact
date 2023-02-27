@@ -1,0 +1,14 @@
+.App {
+  color: green;
+}
+
+.App-logo {
+  border-radius: 100%;
+  width: 600px;
+  height: 600px;
+  color: aqua;
+}
+
+.App-link {
+  color: red;
+}
