@@ -1,24 +1,23 @@
-import './App.css';
-import { Logo } from "./components/Logo";
-import { Navigation } from "./components/Navigation";
-import { CoinFlip } from "./components/CoinFlip";
+import { useState } from 'react';
+import { SingInPage } from './pages/SignInPage';
+import { ChatPage } from './pages/ChatPage';
 
+/*
+Omogućit App komponenti da u svoj state pohrani username koji se submitao u SignInPage komponenti.
+Kada se u App komponenti pohrani usename, onda potrebno umjesto SignInPage prikazati ChatPage.
+*/
 
 function App() {
-  const today = new Date();
+  const [ username, setUsername ] = useState('');
+  function handleSubmit(username) {
+    setUsername(username)
+  }
+
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Logo />
-        <h1>Hello world!</h1>
-        <p>{today.toLocaleString()}</p>
-        <CoinFlip />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Navigation />
-      </header>
+    <div>
+      {username === '' && <SingInPage onSubmit={handleSubmit} />}
+      {username !== '' && <ChatPage />}
     </div>
   );
 }
