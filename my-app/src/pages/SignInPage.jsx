@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { FormField } from "../components/FormField";
 import { InputFormField } from "../components/InputFormField";
 import { RandomNameButton } from "../components/RandomNameButton";
-import { SubmitFormField } from "../components/SubmitFormField";
+import { getRandomName } from "../library/random";
+import { Button } from "../components/Button";
 
 export function SingInPage(props) {
-    const [ formState, setFormState ] = useState('');
+    const [ formState, setFormState ] = useState(getRandomName());
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -23,10 +25,19 @@ export function SingInPage(props) {
             <div className="card">
                 <form className="sign-in-form" onSubmit={handleSubmit}>
                     <InputFormField label="Username" type="text" onChange={handleUsernameChange} value={formState} />
-                    <RandomNameButton onRandomName={handleUsernameChange} />
-                    <SubmitFormField label="Sign in" />
+                    <FormField>
+                        <RandomNameButton onRandomName={handleUsernameChange} />
+                    </FormField>
+                    <FormField>
+                        <Button type="submit" label="Sign in" />
+                    </FormField>
                 </form>
             </div>
         </div>
     );
 };
+
+/*
+Napravit komponentu RandomNameFormField po uzoru na SubmitFormField i u njoj iskoristite RandomNameButton.
+Povežite RandomNameFormField sa SignInPage komponentom. 
+ */
