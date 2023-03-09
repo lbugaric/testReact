@@ -4,6 +4,7 @@ import { InputFormField } from "../components/InputFormField";
 import { RandomNameButton } from "../components/RandomNameButton";
 import { getRandomName } from "../library/random";
 import { Button } from "../components/Button";
+import { AvatarFormField } from '../components/AvatarFormField';
 
 export function SingInPage(props) {
     const [ formState, setFormState ] = useState(getRandomName());
@@ -25,6 +26,7 @@ export function SingInPage(props) {
             <div className="card">
                 <form className="sign-in-form" onSubmit={handleSubmit}>
                     <InputFormField label="Username" type="text" onChange={handleUsernameChange} value={formState} />
+                    <AvatarFormField />
                     <FormField>
                         <RandomNameButton onRandomName={handleUsernameChange} />
                     </FormField>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SingInPage } from './pages/SignInPage';
 import { ChatPage } from './pages/ChatPage';
+import { Counter } from './components/Counter';
 
 /*
 Omogućit App komponenti da u svoj state pohrani username koji se submitao u SignInPage komponenti.
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div>
+      <Counter initialValue={0} step={1.255} precision={null} />
       {username === '' && <SingInPage onSubmit={handleSubmit} />}
       {username !== '' && <ChatPage />}
     </div>
