@@ -8,15 +8,25 @@ import { AvatarFormField } from '../components/AvatarFormField';
 
 export function SingInPage(props) {
     const [ formState, setFormState ] = useState(getRandomName());
+    const [ avatar, setAvatar ] = useState('');
 
     function handleSubmit(event) {
         event.preventDefault();
-        props.onSubmit(formState);
+        props.onSubmit( {
+            username: formState,
+            avatarIndex: avatar,
+        });
     }
 
     function handleUsernameChange(value) {
         setFormState(value);
     }
+
+    function handleAvatarChange(value) {
+        setAvatar(value);
+    }
+
+    console.log(avatar);
 
     console.log(formState);
 
@@ -25,8 +35,8 @@ export function SingInPage(props) {
         <div className="sign-in-page">
             <div className="card">
                 <form className="sign-in-form" onSubmit={handleSubmit}>
+                    <AvatarFormField onChange={handleAvatarChange} />
                     <InputFormField label="Username" type="text" onChange={handleUsernameChange} value={formState} />
-                    <AvatarFormField />
                     <FormField>
                         <RandomNameButton onRandomName={handleUsernameChange} />
                     </FormField>

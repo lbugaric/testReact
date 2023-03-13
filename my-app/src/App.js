@@ -10,8 +10,11 @@ Kada se u App komponenti pohrani usename, onda potrebno umjesto SignInPage prika
 
 function App() {
   const [ username, setUsername ] = useState('');
-  function handleSubmit(username) {
-    setUsername(username)
+  const [ avatarIndex, setAvatarIndex ] = useState('');
+
+  function handleSubmit(user) {
+    setUsername(user.username);
+    setAvatarIndex(user.avatarIndex);
   }
 
 
@@ -19,7 +22,7 @@ function App() {
     <div>
       <Counter initialValue={0} step={1.255} precision={null} />
       {username === '' && <SingInPage onSubmit={handleSubmit} />}
-      {username !== '' && <ChatPage />}
+      {username !== '' && <ChatPage username={username} avatarIndex={avatarIndex} />}
     </div>
   );
 }

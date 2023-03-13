@@ -1,0 +1,1 @@
+ export const avatarImages = ['/avatars/water.png', '/avatars/earth.png', '/avatars/fire.png', '/avatars/air.png'];
