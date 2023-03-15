@@ -1,49 +1,19 @@
-import { useState } from "react";
-import { FormField } from "../components/FormField";
-import { InputFormField } from "../components/InputFormField";
-import { RandomNameButton } from "../components/RandomNameButton";
-import { getRandomName } from "../library/random";
-import { Button } from "../components/Button";
-import { AvatarFormField } from '../components/AvatarFormField';
+import { useContext } from "react";
+import { SignInForm } from "../components/SignInForm";
+import { AppContext } from "../contexts/AppContext";
 
 export function SingInPage(props) {
-    const [ formState, setFormState ] = useState(getRandomName());
-    const [ avatar, setAvatar ] = useState('');
+    const context = useContext(AppContext);
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        props.onSubmit( {
-            username: formState,
-            avatarIndex: avatar,
-        });
+    function handleSubmit(formData) {
+        context.setUsername(formData.username);
+        context.setAvatarIndex(formData.avatarIndex)
     }
-
-    function handleUsernameChange(value) {
-        setFormState(value);
-    }
-
-    function handleAvatarChange(value) {
-        setAvatar(value);
-    }
-
-    console.log(avatar);
-
-    console.log(formState);
-
 
     return (
         <div className="sign-in-page">
             <div className="card">
-                <form className="sign-in-form" onSubmit={handleSubmit}>
-                    <AvatarFormField onChange={handleAvatarChange} />
-                    <InputFormField label="Username" type="text" onChange={handleUsernameChange} value={formState} />
-                    <FormField>
-                        <RandomNameButton onRandomName={handleUsernameChange} />
-                    </FormField>
-                    <FormField>
-                        <Button type="submit" label="Sign in" />
-                    </FormField>
-                </form>
+            <SignInForm onSubmit={handleSubmit} />
             </div>
         </div>
     );

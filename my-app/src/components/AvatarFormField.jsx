@@ -6,7 +6,7 @@ import { avatarImages } from "../library/avatar";
 export function AvatarFormField(props) {
     const [index, setIndex] = useState(0);
 
-    // props.onChange(index);
+    props.onChange(index);
 
     function minusClickToLeft() {
         if (index <= 0) {
@@ -27,7 +27,7 @@ export function AvatarFormField(props) {
     return(
         <FormField>
             <button type="button" onClick={minusClickToLeft}>Previous</button>
-            <img src={avatarImages[index]} />
+            <img src={avatarImages[index]} alt={index} width={100} />
             <button type="button" onClick={plusClickToRight}>Next</button>
         </FormField>
     );

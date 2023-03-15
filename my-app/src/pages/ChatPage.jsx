@@ -1,7 +1,8 @@
-import { InputFormField } from "../components/InputFormField";
-import { SubmitFormField } from "../components/SubmitFormField";
-import { Message } from "../components/Message";
 import { useState } from "react";
+import { Message } from "../components/Message";
+import { ChatForm } from "../components/ChatForm";
+import { useContext } from "react";
+import { AppContext } from "../contexts/AppContext";
 
 /**
 const messages = [
@@ -24,32 +25,15 @@ const messages = [
 ];
 */
 export function ChatPage(props) {
-    const [ formState, setFormState ] = useState('');
     const [ messages, setMessages ] = useState([]);
+    const context = useContext(AppContext);
 
-    function handleChange(message) {
-        setFormState(message);
+    function handleSubmit(message) {
+        setMessages([ ...messages, message]);
     }
-
-    function handleSubmit(event) {
-        event.preventDefault();
-
-        setMessages([ ...messages, {
-            id: Date.now(),
-            author: {
-                username: props.username,
-                avatarIndex: props.avatarIndex,
-            },
-            text: formState,
-        },]);
-
-        setFormState('');
-    }
-
-    console.log(formState);
 
     const messageComponents2 = messages.map((message) => {
-        return <Message key={message.id}  avatarIndex={message.author.avatarIndex} author={message.author.username} text={message.text} />;
+        return <Message key={message.id}  avatarIndex={message.author.avatarIndex} author={context.username} text={message.text} />;
     });
 
     return (
@@ -58,10 +42,7 @@ export function ChatPage(props) {
             <div className="message-list">
                 {messageComponents2}
             </div>
-            <form onSubmit={handleSubmit}>
-                <InputFormField label ="Message" type="text" value={formState} onChange={handleChange} />
-                <SubmitFormField label="Send" />
-            </form>
+            <ChatForm onSubmit={handleSubmit} username={context.username} avatarIndex={context.avatarIndex} />
         </div>
     );
 };
