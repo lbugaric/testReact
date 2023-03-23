@@ -33,6 +33,10 @@ export function ChatPage(props) {
         setMessages([ ...messages, message]);
     }
 
+    function handleSignOut() {
+        context.setUsername('');
+    }
+
     const messageComponents2 = messages.map((message) => {
         return <Message key={message.id}  avatarIndex={message.author.avatarIndex} author={context.username} text={message.text} />;
     });
@@ -44,6 +48,7 @@ export function ChatPage(props) {
     return (
         <div>
             Chat page
+            <button type="button" onClick={handleSignOut}>Sign out</button>
             <div className="message-list">
                 {messageComponents2}
             </div>
