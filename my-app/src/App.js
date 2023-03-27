@@ -26,6 +26,8 @@ function App() {
     );
   }
 
+
+
   return (
     <div>
       <Counter initialValue={0} step={1.255} precision={null} />
