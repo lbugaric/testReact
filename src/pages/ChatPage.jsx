@@ -6,6 +6,7 @@ import { AppContext } from "../contexts/AppContext";
 import { Navigate } from "react-router-dom";
 import { useEffect } from "react";
 
+
 /**
 const messages = [
     {
@@ -26,6 +27,7 @@ const messages = [
     },
 ];
 */
+
 export function ChatPage(props) {
     const [ messages, setMessages ] = useState([]);
     const [ client, setClient ] = useState(null);
@@ -46,7 +48,7 @@ export function ChatPage(props) {
     }
 
     const messageComponents2 = messages.map((message) => {
-        return <Message key={message.id}  avatarIndex={message.author.avatarIndex} author={context.username} text={message.text} />;
+        return <Message key={message.id}  avatarIndex={message.author.avatarIndex} author={message.author.username} text={message.text} />;
     });
 
     useEffect(() => {

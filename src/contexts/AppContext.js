@@ -24,8 +24,9 @@ export function AppProvider(props) {
             });
     }, []);
 
-
+/*
         console.log(config);
+*/
 
     return (
         <AppContext.Provider value={{
