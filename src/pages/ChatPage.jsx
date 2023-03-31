@@ -70,7 +70,7 @@ export function ChatPage(props) {
         if (chatRoom !== null && !ready) {
             chatRoom.on('data', (data) => {
                 setMessages((messages) => {
-                    return [... messages, data ]
+                    return [ ...messages, data ]
                 });
             });
             setReady(true);
