@@ -13,4 +13,3 @@ export function InputFormField(props) {
         </FormField>
     );
 };
-// input.addEventListener('change', )

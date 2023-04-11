@@ -10,6 +10,8 @@ export function AppProvider(props) {
     const [ avatarIndex, setAvatarIndex ] = useState(0);
     const [ config, setConfig ] = useState(null);
     const [ error, setError ] = useState(null);
+    const [ usernameColor, setUsernameColor] = useState('');
+    const [ messageColor, setMessageColor ] = useState('');
 
     useEffect(() => {
         fetch("/assets/config.json")
@@ -24,9 +26,6 @@ export function AppProvider(props) {
             });
     }, []);
 
-/*
-        console.log(config);
-*/
 
     return (
         <AppContext.Provider value={{
@@ -34,6 +33,10 @@ export function AppProvider(props) {
             setUsername: setUsername,
             avatarIndex: avatarIndex,
             setAvatarIndex: setAvatarIndex,
+            usernameColor: usernameColor,
+            setUsernameColor: setUsernameColor,
+            messageColor: messageColor,
+            setMessageColor: setMessageColor,
             isSignedIn: username !== '',
             config: config,
             error: error,
@@ -42,12 +45,3 @@ export function AppProvider(props) {
         </AppContext.Provider>
     );
 }
-
-/*
-napravit sign out funkciju u context, tako da se moze samo pozvat u daljnem kodu i modulima
-*/
-
-/*
-u App komponenti ispisat error poruku koja se nalazi u AppContextu
-npr. "došlo je do greške: (poruka)"
-*/

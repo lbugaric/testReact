@@ -1,6 +1,8 @@
 .button {
-    width: 100%;
+    margin: 5px;
+    padding: 10px;
     height: 40px;
-    background-color: aquamarine;
-    color: purple;
+    background-color: rgb(0, 188, 245);
+    color: white;
+    border-radius: 10px;
 }

@@ -1,0 +1,42 @@
+.sign-in-page {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-position: 'center';
+    background-size: 'cover';
+    background-repeat: 'no-repeat';
+    background-image: url("/public/background/closekoi.png");
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border: solid;
+    border-width: 5px;
+    border-style: inset;
+    border-color: rgb(39, 35, 35);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(39, 35, 35, 0.808);
+    width: 30vw;
+}
+
+.card-links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(39, 35, 35);
+
+}

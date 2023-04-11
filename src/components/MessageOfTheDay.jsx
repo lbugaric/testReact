@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import "../styles/MessageOfTheDay.css";
 
 export function MessageOfTheDay () {
     const [ data, setData ] = useState(null);
@@ -22,18 +23,15 @@ export function MessageOfTheDay () {
         }
     }, [shouldFetch]);
 
-/*    
-console.log(data);
-*/
 
     if ( data === null) {
         return <div>Loading message of the day...</div>
     }
 
     return (
-        <div>
+        <div className="message-of-the-day">
             <div>{data.message}</div>
-            <button type="button" onClick={handleFetch}>Fetch data</button>
+            <button type="button" onClick={handleFetch}>MOTD</button>
         </div>
     )
 }

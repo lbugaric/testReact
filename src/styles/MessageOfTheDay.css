@@ -1,0 +1,11 @@
+.message-of-the-day {
+    margin-bottom: 10px;
+    border: solid;
+    border-width: 5px;
+    border-style: inset;
+    border-color: rgb(39, 35, 35);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(39, 35, 35, 0.61);
+    width: 30vw;
+}

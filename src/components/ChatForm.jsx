@@ -16,15 +16,18 @@ export function ChatForm(props) {
             author: {
                 username: props.username,
                 avatarIndex: props.avatarIndex,
+
             },
             text: formState,
+            usernameColor: props.usernameColor,
+            messageColor: props.messageColor,
         });
         setFormState('');
     }
     
     return(
         <form onSubmit={handleSubmit}>
-            <InputFormField label ="Message" type="text" value={formState} onChange={handleChange} />
+            <em><InputFormField label ="Message" type="text" value={formState} onChange={handleChange} /></em>
             <SubmitFormField label="Send" />
         </form>
         );

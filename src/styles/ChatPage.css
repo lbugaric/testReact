@@ -1,0 +1,50 @@
+.chat-page-main {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-position: 'center';
+    background-size: 'cover';
+    background-repeat: 'no-repeat';
+    background-image: url("/public/background/friends.png");
+
+}
+
+.chat-page-title {
+    margin: 0 20px 20px 20px;
+    color: rgba(0, 0, 0, 0.39);
+}
+
+.chat-page-button {
+    padding: 3px 5px 3px 5px;
+    height: 30px;
+    background-color: rgba(183, 211, 57, 0.349);
+    color: rgba(7, 6, 6, 0.336);
+    border-radius: 5px;
+    border-color: rgba(183, 211, 57, 0.603);
+}
+
+.message-list {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    width: 90vw;
+    overflow: auto;
+    overflow-wrap: break-word;
+    margin: 10px 10px 10px 10px;
+    border: solid;
+    border-width: 2px;
+    border-color: rgba(53, 54, 4, 0.178);
+    background-color: rgba(87, 119, 128, 0.781);
+}
+.message-list-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 16px 0 16px 0;
+}
+
+.chat-page-form {
+    color: rgb(0, 0, 0);
+}

@@ -2,18 +2,16 @@ import "../styles/Message.css";
 import { avatarImages } from "../library/avatar";
 
 export function Message(props) {
+    
     return (
         <div className="message">
-            <img src={avatarImages[props.avatarIndex]} alt={props.author} width={100} height={100} />
-            <div className="message-author">{props.author}</div>
-            <div className="message-text">{props.text}</div>
+            <img src={avatarImages[props.avatarIndex]} alt={props.author} width={60} height={60} />
+            <div className="message-author">
+                <div style={{color: props.usernameColor}}>{props.author}</div>
+            </div>
+            <div className="message-text">
+                <div style={{color: props.messageColor}}>{props.text}</div>
+            </div>
         </div>
     );
 };
-
-/*
-                <div className="message">
-                    <div className="message-author">Username</div>
-                    <div className="message-text">Message text</div>
-                </div>
-*/                
