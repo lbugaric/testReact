@@ -18,3 +18,8 @@ Install node 14+.
 - [x] User input and send message feature
 - [x] A sign out button on Chat page
 - [x] Simple FAQ, but really its just a short info page
+
+
+## Uploaded build on Netlify
+
+https://lbugaric-testreact.netlify.app
